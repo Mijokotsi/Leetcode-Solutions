@@ -32,3 +32,30 @@ public:
         return (s.compare(ans) == 0);
     }
 };
+
+
+// Alternate Solution in TC: O(n)
+
+#define ll int
+class Solution {
+public:
+    bool isSubsequence(string s, string t) {
+        
+        // Setting indexes for both the strings
+        ll spos=0, tpos=0;
+        
+        // Running loop till the end of the string t is reached
+        while(tpos<t.size()){
+            
+            // If elements match increment the index of string s
+            if(s[spos]==t[tpos])spos++;
+            
+            // else increment the index of string t
+            tpos++;
+        }
+        
+        // If the elements would be present order wise in the string t
+        // we'll reach the end of string s, and answer would be true, else false
+        return (spos==s.size());
+    }
+};
