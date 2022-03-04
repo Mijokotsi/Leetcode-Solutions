@@ -2,9 +2,14 @@ class Solution {
 public:
     double champagneTower(int poured, int query_row, int query_glass) {
         
+        // defining a vector matrix that will hold our glasses
         vector<vector<double>> dp(101, vector<double> (101, 0));
+        
+        // All glasses are poured at once on the first glass hence 
+        // dp[0][0] = poured
         dp[0][0] = poured;
         
+        // Running the loop
         for(int i = 0; i < 100; i++)
             for(int j = 0; j <= i; j++)
                 
