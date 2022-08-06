@@ -6,21 +6,13 @@ public:
         int s = 0, e = nums.size()-1;
         int ans = 0;
         
-        // edge case: if the target is greater than the last element
-        // as the array is sorted, so there just return position next to last index
-        
-        // if(target > nums[e])
-        //     return e+1;
-        
         // looping and following the same procedure of binary search
         while(s <= e) {
             int mid = s + (e-s)/2;
             
-            if(target > nums[mid]) {
-                // incrementing s and at the same time, storing the index
+            if(target > nums[mid])
                 s = mid+1;
-                // ans = s;
-            }
+            
             else if(target < nums[mid])
                 e = mid-1;
             
@@ -28,7 +20,8 @@ public:
                 return mid;
         }
         
-        // returning the answer
+        // if the element is not found, return e+1, i.e., 
+        // index just greater than the last index
         return e+1;
     }
 };
