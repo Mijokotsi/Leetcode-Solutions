@@ -9,8 +9,8 @@ public:
         // edge case: if the target is greater than the last element
         // as the array is sorted, so there just return position next to last index
         
-        if(target > nums[e])
-            return e+1;
+        // if(target > nums[e])
+        //     return e+1;
         
         // looping and following the same procedure of binary search
         while(s <= e) {
@@ -19,7 +19,7 @@ public:
             if(target > nums[mid]) {
                 // incrementing s and at the same time, storing the index
                 s = mid+1;
-                ans = s;
+                // ans = s;
             }
             else if(target < nums[mid])
                 e = mid-1;
@@ -29,6 +29,6 @@ public:
         }
         
         // returning the answer
-        return ans;
+        return e+1;
     }
 };
