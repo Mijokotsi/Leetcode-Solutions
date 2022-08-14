@@ -9,11 +9,13 @@ public:
             
             int mid = start + (end-start)/2;
             
-            if(arr[mid+1] < arr[mid] and arr[mid-1] < arr[mid])
+            if(start == end)
                 return mid;
+            // if(arr[mid+1] < arr[mid] and arr[mid-1] < arr[mid])
+            //     return mid;
             
             else if(arr[mid+1] < arr[mid])
-                end = mid-1;
+                end = mid;
             else
                 start = mid+1;
         }
