@@ -25,7 +25,7 @@ public:
                 // this element in the array
                 start = mid+1;
         }
-        
+        // At the end, just return start or end, as both will be pointing to the same element
         return start;
     }
 };
